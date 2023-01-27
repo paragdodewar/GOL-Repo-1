@@ -6,8 +6,8 @@ pipeline {
     }
 stages { 
      
- //stage('Preparation') { 
- //   steps {
+ stage('Preparation') { 
+    steps {
 // for display purpose
 
       // Get some code from a GitHub repository
@@ -19,8 +19,8 @@ stages {
  // ** NOTE: This 'M3' Maven tool must be configured
  
      // **       in the global configuration.   
-     //}
-   //}
+     }
+   }
 
    stage('Build') {
        steps {
