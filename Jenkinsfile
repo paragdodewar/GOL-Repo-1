@@ -12,7 +12,7 @@ stages {
 
       // Get some code from a GitHub repository
 
-   git 'https://github.com/paragdodewar/GOL-Repo-1.git'
+        git 'https://github.com/paragdodewar/GOL-Repo-1.git'
 
       // Get the Maven tool.
      
@@ -38,7 +38,7 @@ stages {
   stage('Unit Test Results') {
       steps {
       junit '**/target/surefire-reports/TEST-*.xml'
-      
+      archiveArtifacts 'target/*.war'
       }
  }
   stage('Sonarqube') {
