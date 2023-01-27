@@ -12,7 +12,7 @@ stages {
 
       // Get some code from a GitHub repository
 
-   //  git 'https://github.com/raknas999/GOL-Repo.git'
+   git 'https://github.com/paragdodewar/GOL-Repo-1.git'
 
       // Get the Maven tool.
      
@@ -42,13 +42,13 @@ stages {
       }
  }
   stage('Sonarqube') {
-    environment {
-        scannerHome = tool 'sonarqube'
-    }
+  //  environment {
+     //   scannerHome = tool 'sonarqube'
+  //  }
     steps {
         withSonarQubeEnv('sonarqube') {
-            sh "${scannerHome}/bin/sonar-scanner"
-            
+           // sh "${scannerHome}/bin/sonar-scanner"
+            sh 'mvn sonar:sonar -f pom.xml'
         }
     //    timeout(time: 10, unit: 'MINUTES') {
     //      waitForQualityGate abortPipeline: true
